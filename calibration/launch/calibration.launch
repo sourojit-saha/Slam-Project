@@ -1,0 +1,17 @@
+<launch>
+    <arg name="output" default="screen" />
+
+    <node pkg="calibration" type="calibration_node" name="calibration" output="$(arg output)">
+        <param name="num_calib_clouds" value="1" />
+        <param name="voxel_size" value="0.2" />
+        <param name="velodyne_height" value="0.6" />
+        <param name="robot_1" value="/cmu_rc3/velodyne_cloud_registered_map" />
+        <param name="robot_2" value="/cmu_rc4/velodyne_cloud_registered_map" />
+        <param name="threshold" value="8.0" />
+        <param name="iterations" value="200" />
+        <param name="t_dist" value="0.0" />
+        <param name="t_angle" value="0.00" />
+        <param name="fitness_threshold" value="2.0" />
+    </node>
+
+</launch>
